@@ -3,7 +3,7 @@
 
 
 arg <- aggregate(Emissions ~ year + type, NEI[NEI$fips==24510, ], sum)
-
+library(ggplot2)
 ggplot(arg, aes(x=year, y=Emissions, colour=type)) + ggtitle("Baltimore emissions by year by type") +geom_line()
 
 ggsave(file="plot3.png")
